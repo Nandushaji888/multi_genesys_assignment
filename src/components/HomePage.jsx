@@ -116,7 +116,7 @@ const HomePage = () => {
             </button>
           </div>
           <Link
-            to="/add"
+            to="/add-employee"
             className="bg-green-700 text-white rounded-md my-1 py-1 px-2"
           >
             Add New Employee
