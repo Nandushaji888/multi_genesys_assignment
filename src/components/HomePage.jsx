@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 import DeleteConfirmation from "./DeleteConfirmation";
 
 const HomePage = () => {
-  const employee = [
-    { id: 123, name: "Nandu",email:'nandu@gmail' },
-    { id: 124, name: "Arun" },
-    { id: 125, name: "Rig" },
-    { id: 126, name: "Anvidh" },
-  ];
+//   const employee = [
+//     { id: 123, name: "Nandu",email:'nandu@gmail' },
+//     { id: 124, name: "Arun" },
+//     { id: 125, name: "Rig" },
+//     { id: 126, name: "Anvidh" },
+//   ];
   const [employees, setEmployees] = useState([]);
   const [searchId, setSearchId] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
@@ -34,7 +34,7 @@ const HomePage = () => {
         setError("Failed to fetch employees.");
       }
     } catch (error) {
-    //   setError("An error occurred while fetching employees.");
+      setError("An error occurred while fetching employees.");
     } finally {
       setLoading(false);
     }
@@ -86,12 +86,12 @@ const HomePage = () => {
 
   const indexOfLastEmployee = currentPage * employeesPerPage;
   const indexOfFirstEmployee = indexOfLastEmployee - employeesPerPage;
-  const currentEmployees = employee.slice(
+  const currentEmployees = employees.slice(
     indexOfFirstEmployee,
     indexOfLastEmployee
   );
 
-  const totalPages = Math.ceil(employee.length / employeesPerPage);
+  const totalPages = Math.ceil(employees.length / employeesPerPage);
 
   return (
     <div className="container mx-auto p-4">

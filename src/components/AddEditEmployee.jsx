@@ -29,7 +29,7 @@ const AddEditEmployee = () => {
       const response = await axios.get("/api/countries");
       setCountries(response.data);
     } catch (error) {
-      // setError('Error fetching countries');
+      setError('Error fetching countries');
     } finally {
       setLoading(false);
     }
@@ -42,7 +42,7 @@ const AddEditEmployee = () => {
       const response = await axios.get(`/api/employees/${id}`);
       setEmployee(response.data);
     } catch (error) {
-      // setError('Error fetching employee details');
+      setError('Error fetching employee details');
     } finally {
       setLoading(false);
     }

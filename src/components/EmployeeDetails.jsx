@@ -1,22 +1,22 @@
 import React, { useEffect, useState } from "react";
-import { useParams, Link, useNavigate } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
 const EmployeeDetails = () => {
   const { id } = useParams();
-  const [employeee, setEmployee] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState("");
-  const navigate = useNavigate();
-  const employee = {
-    name: "Nandu",
-    email: "nandu@gmail",
-    id: 123,
-    mobile: 9874562135,
-    state: "kerla",
-    country: "India",
-    district: "Ernakulam",
-  };
+  const [employee, setEmployee] = useState(null);
+//   const [loading, setLoading] = useState(false);
+//   const [error, setError] = useState("");
+//   const navigate = useNavigate();
+//   const employee = {
+//     name: "Nandu",
+//     email: "nandu@gmail",
+//     id: 123,
+//     mobile: 9874562135,
+//     state: "kerla",
+//     country: "India",
+//     district: "Ernakulam",
+//   };
 
   useEffect(() => {
     fetchEmployeeDetails();
@@ -48,9 +48,9 @@ const EmployeeDetails = () => {
 //     }
 //   };
 
-  if (loading) return <div className="text-center mt-10">Loading...</div>;
+//   if (loading) return <div className="text-center mt-10">Loading...</div>;
 
-  if (error) return <div className="text-center mt-10 text-red-600">{error}</div>;
+//   if (error) return <div className="text-center mt-10 text-red-600">{error}</div>;
 
   if (!employee) return <div className="text-center mt-10">Employee not found.</div>;
 
